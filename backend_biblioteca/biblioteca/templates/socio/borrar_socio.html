@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Borrar Socio</h1>
+<p>¿Estás seguro de que quieres borrar a {{ socio.nombre }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Borrar</button>
+</form>
+{% endblock %}

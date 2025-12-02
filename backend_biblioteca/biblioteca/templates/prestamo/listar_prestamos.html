@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Préstamos</h1>
+<a href="{% url 'agregar_prestamo' %}" class="btn">Agregar Préstamo</a>
+<hr>
+{% for prestamo in prestamos %}
+    <div class="card">
+        <h2>Préstamo #{{ prestamo.pk }}</h2>
+        <p><strong>Socio:</strong> {{ prestamo.socio }}</p>
+        <p><strong>Libro:</strong> {{ prestamo.libro }}</p>
+        <p><strong>Fecha de Préstamo:</strong> {{ prestamo.fecha_prestamo }}</p>
+        <p><strong>Fecha de Devolución:</strong> {{ prestamo.fecha_devolucion }}</p>
+        <a href="{% url 'ver_prestamo' pk=prestamo.pk %}" class="btn">Ver</a>
+        <a href="{% url 'actualizar_prestamo' pk=prestamo.pk %}" class="btn">Actualizar</a>
+        <a href="{% url 'borrar_prestamo' pk=prestamo.pk %}" class="btn btn-danger">Borrar</a>
+    </div>
+{% endfor %}
+{% endblock %}

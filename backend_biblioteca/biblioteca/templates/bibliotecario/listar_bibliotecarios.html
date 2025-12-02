@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bibliotecarios</h1>
+<a href="{% url 'agregar_bibliotecario' %}" class="btn">Agregar Bibliotecario</a>
+<hr>
+{% for bibliotecario in bibliotecarios %}
+    <div class="card">
+        <h2>{{ bibliotecario.nombre }} {{ bibliotecario.apellido }}</h2>
+        <p><strong>Email:</strong> {{ bibliotecario.email }}</p>
+        <p><strong>Teléfono:</strong> {{ bibliotecario.telefono }}</p>
+        <a href="{% url 'ver_bibliotecario' pk=bibliotecario.pk %}" class="btn">Ver</a>
+        <a href="{% url 'actualizar_bibliotecario' pk=bibliotecario.pk %}" class="btn">Actualizar</a>
+        <a href="{% url 'borrar_bibliotecario' pk=bibliotecario.pk %}" class="btn btn-danger">Borrar</a>
+    </div>
+{% endfor %}
+{% endblock %}

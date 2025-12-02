@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Multa a {{ multa.socio_multado.nombre }} {{ multa.socio_multado.apellido }}</h2>
+    <p><strong>Monto:</strong> {{ multa.monto_multa }}</p>
+    <p><strong>Estado:</strong> {{ multa.estado_pago }}</p>
+    <p><strong>Fecha de Generación:</strong> {{ multa.fecha_generacion }}</p>
+    <br>
+    <a href="{% url 'actualizar_multa' multa.pk %}" class="btn">Editar</a>
+    <a href="{% url 'borrar_multa' multa.pk %}" class="btn btn-danger">Borrar</a>
+    <a href="{% url 'listar_multas' %}" class="btn btn-secondary">Volver al listado</a>
+</div>
+{% endblock %}

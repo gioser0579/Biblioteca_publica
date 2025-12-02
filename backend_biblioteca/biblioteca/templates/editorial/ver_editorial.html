@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>{{ editorial.nombre_editorial }}</h2>
+    <p><strong>País:</strong> {{ editorial.pais_origen }}</p>
+    <p><strong>Email:</strong> {{ editorial.email }}</p>
+    <p><strong>Sitio Web:</strong> {{ editorial.sitio_web }}</p>
+    <br>
+    <a href="{% url 'actualizar_editorial' editorial.pk %}" class="btn">Editar</a>
+    <a href="{% url 'borrar_editorial' editorial.pk %}" class="btn btn-danger">Borrar</a>
+    <a href="{% url 'listar_editoriales' %}" class="btn btn-secondary">Volver al listado</a>
+</div>
+{% endblock %}

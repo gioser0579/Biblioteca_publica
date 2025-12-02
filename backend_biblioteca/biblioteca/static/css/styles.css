@@ -1,0 +1,235 @@
+/*
+   Estilo: Biblioteca Clásica
+   ---
+   Paleta de Colores:
+   - Fondo: #fdfaf6 (Crema de página antigua)
+   - Texto Principal: #3a3a3a (Gris oscuro, casi negro)
+   - Acento Principal: #8a3033 (Rojo vino profundo)
+   - Acento Hover: #6a2426 (Vino más oscuro)
+   - Blanco Pergamino: #ffffff
+   - Sombra sutil: rgba(0, 0, 0, 0.07)
+   - Peligro: #c94c4c (Rojo apagado)
+*/
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #fdfaf6;
+    color: #3a3a3a;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    flex: 1;
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    border: 1px solid #eee;
+}
+
+/* --- Header y Navegación --- */
+header {
+    background-color: transparent; /* Se integra con el fondo */
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: none; /* Quitamos la sombra, el diseño es más plano */
+}
+
+header h1 {
+    font-family: 'Lora', serif;
+    font-size: 3rem;
+    color: #8a3033;
+    margin: 0;
+}
+
+nav {
+    background-color: #8a3033;
+    border-bottom: 3px solid #6a2426;
+    padding: 0.5rem 0; /* Más delgada */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    border-radius: 0; /* Sin bordes redondeados para un look más clásico */
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #6a2426;
+}
+
+/* --- Página de Inicio --- */
+.hero {
+    background-image: linear-gradient(rgba(40, 40, 40, 0.6), rgba(40, 40, 40, 0.6)), url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 6rem 3rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: -2.5rem -2.5rem 2.5rem -2.5rem; /* Ajuste al nuevo padding del container */
+}
+
+.hero h2 {
+    font-family: 'Lora', serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* --- Títulos de sección --- */
+.card h2 {
+    font-family: 'Lora', serif;
+    color: #8a3033;
+    border-bottom: 2px solid #f0e9e0;
+    padding-bottom: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 2rem; /* Más espacio */
+    font-size: 2.2rem;
+}
+
+/* --- Tablas --- */
+.table-responsive {
+    overflow-x: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0; /* Sin margen porque el contenedor ya lo gestiona */
+}
+
+.table th, .table td {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid #f0e9e0;
+}
+
+.table thead {
+    background-color: transparent; /* Sin fondo */
+}
+
+.table th {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: #3a3a3a;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tr:hover {
+    background-color: #fdfaf6;
+}
+
+
+/* --- Formularios --- */
+form .as_p p {
+    margin-bottom: 1.5rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #fdfaf6;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    outline: none;
+    border-color: #8a3033;
+    box-shadow: 0 0 0 3px rgba(138, 48, 51, 0.1);
+}
+
+
+/* --- Botones --- */
+.btn, button[type="submit"] {
+    background-color: #8a3033;
+    color: #fff;
+    padding: 0.9rem 1.8rem;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.btn:hover, button[type="submit"]:hover {
+    background-color: #6a2426;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #c94c4c;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #a53b3b;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #3a3a3a;
+    color: #ccc;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Listado de Editoriales</h2>
+    <a href="{% url 'agregar_editorial' %}" class="btn">Agregar Editorial</a>
+    <br><br>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>País</th>
+                    <th>Email</th>
+                    <th>Sitio Web</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for editorial in editoriales %}
+                <tr>
+                    <td>{{ editorial.nombre_editorial }}</td>
+                    <td>{{ editorial.pais_origen }}</td>
+                    <td>{{ editorial.email }}</td>
+                    <td>{{ editorial.sitio_web }}</td>
+                    <td>
+                        <a href="{% url 'ver_editorial' editorial.pk %}" class="btn btn-secondary">Ver</a>
+                        <a href="{% url 'actualizar_editorial' editorial.pk %}" class="btn btn-secondary">Editar</a>
+                        <a href="{% url 'borrar_editorial' editorial.pk %}" class="btn btn-danger">Borrar</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No hay editoriales registradas.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

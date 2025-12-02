@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Borrar Multa</h2>
+    <p>¿Estás seguro de que quieres borrar la multa a "{{ multa.socio_multado.nombre }} {{ multa.socio_multado.apellido }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Borrar</button>
+        <a href="{% url 'listar_multas' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

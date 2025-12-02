@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>{{ autor.nombre_autor }} {{ autor.apellido_autor }}</h2>
+    <p><strong>Nacionalidad:</strong> {{ autor.nacionalidad }}</p>
+    <p><strong>Fecha de Nacimiento:</strong> {{ autor.fecha_nacimiento|date:"d/m/Y" }}</p>
+    {% if autor.fecha_fallecimiento %}
+    <p><strong>Fecha de Fallecimiento:</strong> {{ autor.fecha_fallecimiento|date:"d/m/Y" }}</p>
+    {% endif %}
+
+    <hr>
+
+    <h4>Biografía</h4>
+    <p>{{ autor.biografia|linebreaksbr }}</p>
+
+    {% if autor.libro_mas_representativo %}
+    <hr>
+    <h4>Libro Más Representativo</h4>
+    <div class="card-nested">
+        <p><strong>Título:</strong> {{ autor.libro_mas_representativo.titulo }}</p>
+        <p><strong>ISBN:</strong> {{ autor.libro_mas_representativo.isbn }}</p>
+        <p><strong>Editorial:</strong> {{ autor.libro_mas_representativo.editorial }}</p>
+        <a href="{% url 'ver_libro' autor.libro_mas_representativo.pk %}" class="btn btn-secondary">Ver Detalles del Libro</a>
+    </div>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'actualizar_autor' autor.pk %}" class="btn">Editar Autor</a>
+    <a href="{% url 'borrar_autor' autor.pk %}" class="btn btn-danger">Borrar Autor</a>
+    <a href="{% url 'listar_autores' %}" class="btn btn-secondary">Volver al listado</a>
+</div>
+{% endblock %}

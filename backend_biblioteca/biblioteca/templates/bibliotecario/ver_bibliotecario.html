@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ bibliotecario.nombre }}</h1>
+<p>Apellido: {{ bibliotecario.apellido }}</p>
+<p>Email: {{ bibliotecario.email }}</p>
+<p>Número de empleado: {{ bibliotecario.numero_empleado }}</p>
+<a href="{% url 'actualizar_bibliotecario' bibliotecario.pk %}">Actualizar</a>
+<a href="{% url 'borrar_bibliotecario' bibliotecario.pk %}">Borrar</a>
+{% endblock %}

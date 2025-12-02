@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ socio.nombre }}</h1>
+<p>Apellido: {{ socio.apellido }}</p>
+<p>Email: {{ socio.email }}</p>
+<p>Fecha de nacimiento: {{ socio.fecha_nacimiento }}</p>
+<a href="{% url 'actualizar_socio' socio.pk %}">Actualizar</a>
+<a href="{% url 'borrar_socio' socio.pk %}">Borrar</a>
+{% endblock %}

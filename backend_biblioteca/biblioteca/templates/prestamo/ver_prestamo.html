@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Préstamo #{{ prestamo.id }}</h1>
+<p>Socio: {{ prestamo.socio.nombre }} {{ prestamo.socio.apellido }}</p>
+<p>Bibliotecario: {{ prestamo.bibliotecario.nombre }} {{ prestamo.bibliotecario.apellido }}</p>
+<p>Fecha de préstamo: {{ prestamo.fecha_prestamo }}</p>
+<p>Fecha de devolución: {{ prestamo.fecha_devolucion }}</p>
+<a href="{% url 'actualizar_prestamo' prestamo.pk %}">Actualizar</a>
+<a href="{% url 'borrar_prestamo' prestamo.pk %}">Borrar</a>
+{% endblock %}
